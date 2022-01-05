@@ -29,12 +29,31 @@ $validatedData = $request->validate([
 $data = new User();
 $data->usertype = $request->usertype;
 $data->name = $request->name;
-$data->password = $request->password;
-$data->email = bcrypt($request->email);
+$data->password =bcrypt( $request->password);
+$data->email = $request->email;
 $data->save();
 $notification = array(
     'message' => 'User added successfully',
     'alert-type' => 'success',
+);
+return redirect()->route('user.view')->with($notification);
+    }
+    public function UserEdit($id){
+
+        $editData = User::find($id);
+        return view('backend.user.edit_user', compact('editData'));
+    }
+
+    public function UserUpdate($id, Request $request){
+$data = User::find($id);
+$data->usertype = $request->usertype;
+$data->name = $request->name;
+
+$data->email = $request->email;
+$data->save();
+$notification = array(
+'message' => 'User updated successfully',
+'alert-type' => 'info',
 );
 return redirect()->route('user.view')->with($notification);
     }
