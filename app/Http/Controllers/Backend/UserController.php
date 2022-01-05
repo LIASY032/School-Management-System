@@ -32,6 +32,10 @@ $data->name = $request->name;
 $data->password = $request->password;
 $data->email = bcrypt($request->email);
 $data->save();
-return redirect()->route('user.view');
+$notification = array(
+    'message' => 'User added successfully',
+    'alert-type' => 'success',
+);
+return redirect()->route('user.view')->with($notification);
     }
 }
