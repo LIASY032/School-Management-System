@@ -16,12 +16,12 @@
 			 <div class="box">
 				<div class="box-header with-border">
 				  <h3 class="box-title">User List</h3>
-                  <a href="#" style="float: right; " class="btn btn-round btn-success mb-5">Add User</a>
+                  <a href="{{ route('user.add') }}" style="float: right; " class="btn btn-round btn-success mb-5">Add User</a>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
 					<div class="table-responsive">
-					  <table id="example1" class="table table-bordered table-striped">
+					  <table  class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th width="5%">SL</th>
