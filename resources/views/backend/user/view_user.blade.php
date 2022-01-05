@@ -24,35 +24,42 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
+								<th width="5%">SL</th>
+								<th>Role</th>
 								<th>Name</th>
-								<th>Position</th>
-								<th>Office</th>
-								<th>Age</th>
-								<th>Start date</th>
-								<th>Salary</th>
+								<th>Email</th>
+								<th width="25%">Action</th>
+					
 							</tr>
 						</thead>
 						<tbody>
+                            @foreach ($allData as $key => $user)
+                                
+                     
 							<tr>
-								<td>Tiger Nixon</td>
-								<td>System Architect</td>
-								<td>Edinburgh</td>
-								<td>61</td>
-								<td>2011/04/25</td>
-								<td>$320,800</td>
+								<td>{{ $key +1 }}</td>
+								<td>{{ $user->usertype }}</td>
+								<td>{{ $user->name }}</td>
+								<td>{{ $user->email }}</td>
+								<td>
+                                    
+                                    <a href="#" class="btn btn-info">Edit</a>
+                                    <a href="#" class="btn btn-danger">Delete</a>
+                                </td>
+					
 							</tr>
-							
+							@endforeach
 						</tbody>
-						<tfoot>
+						{{-- <tfoot>
 							<tr>
+									<th>SL</th>
+								<th>Role</th>
 								<th>Name</th>
-								<th>Position</th>
-								<th>Office</th>
-								<th>Age</th>
-								<th>Start date</th>
-								<th>Salary</th>
+								<th>Email</th>
+								<th>Action</th>
+					
 							</tr>
-						</tfoot>
+						</tfoot> --}}
 					  </table>
 					</div>
 				</div>
