@@ -57,4 +57,17 @@ $notification = array(
 );
 return redirect()->route('user.view')->with($notification);
     }
+
+
+    public function UserDelete($id) {
+
+        $user = User::find($id);
+        $user->delete();
+      
+        $notification = array(
+        'message' => 'User deleted successfully',
+        'alert-type' => 'info',
+        );
+        return redirect()->route('user.view')->with($notification);
+    }
 }
