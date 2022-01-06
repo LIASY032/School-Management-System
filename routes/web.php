@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,5 +38,13 @@ Route::prefix('users')->group(function () {
     Route::post('/store', [UserController::class, 'UserStore'])->name('users.store');
     Route::post('/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
 
+
+});
+
+// User Profile and Change Password
+
+Route::prefix('profiles')->group(function () {
+    Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
+   
 
 });
