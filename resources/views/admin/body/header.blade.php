@@ -109,6 +109,11 @@
                      </ul>
                  </li>
 
+                 @php
+                     $user = DB::table('users')
+                         ->where('id', Auth::user()->id)
+                         ->first();
+                 @endphp
                  <!-- User Account-->
                  <li class="dropdown user user-menu">
                      <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown"
@@ -118,7 +123,8 @@
                      </a>
                      <ul class="dropdown-menu animated flipInX">
                          <li class="user-body">
-                             <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i> Profile</a>
+                             <a class="dropdown-item" href="{{ route('profile.view') }}"><i
+                                     class="ti-user text-muted mr-2"></i> Profile</a>
                              <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
                              <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
                              <div class="dropdown-divider"></div>

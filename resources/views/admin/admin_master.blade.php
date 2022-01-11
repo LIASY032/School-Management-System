@@ -34,6 +34,7 @@
         @include('admin.body.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
+
         @yield('admin')
         <!-- /.content-wrapper -->
         @include('admin.body.footer')
