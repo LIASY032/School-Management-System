@@ -58,23 +58,23 @@
 
                   </ul>
               </li>
+              <li class="treeview  {{ $prefix == '/setups' ? 'active' : '' }}">
+                  <a href="#">
+                      <i data-feather="mail"></i> <span>Setup Management</span>
+                      <span class="pull-right-container">
+                          <i class="fa fa-angle-right pull-right"></i>
+                      </span>
+                  </a>
+                  <ul class="treeview-menu">
+                      <li><a href="{{ route('student.class.view') }}"><i class="ti-more"></i>Student Class</a>
+                      </li>
+                      <li><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a>
+                      </li>
 
-              {{-- <li class="treeview">
-          <a href="#">
-            <i data-feather="file"></i>
-            <span>Pages</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="profile.html"><i class="ti-more"></i>Profile</a></li>
-            <li><a href="invoice.html"><i class="ti-more"></i>Invoice</a></li>
-            <li><a href="gallery.html"><i class="ti-more"></i>Gallery</a></li>
-            <li><a href="faq.html"><i class="ti-more"></i>FAQs</a></li>
-            <li><a href="timeline.html"><i class="ti-more"></i>Timeline</a></li>
-          </ul>
-        </li> --}}
+                  </ul>
+              </li>
+
+
               <li class="header nav-small-cap">User Interface</li>
 
               <li class="treeview">
