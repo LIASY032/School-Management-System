@@ -79,6 +79,9 @@
                       <li><a href="{{ route('fee.category.view') }}"><i class="ti-more"></i>Fee Category</a>
                       </li>
 
+                      <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Fee Amount</a>
+                      </li>
+
                   </ul>
               </li>
 
