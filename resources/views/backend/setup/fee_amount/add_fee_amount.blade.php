@@ -139,8 +139,31 @@
 
     </div>
 
-
     <script type="text/javascript">
+        $(document).ready(function() {
+
+            console.log('hello');
+            var counter = 0;
+
+            $(".addeventmore").click(function() {
+
+                var whole_extra_item_add = $('#whole_extra_item_add').html();
+
+                var add_item = $(".add_item");
+                add_item.append(whole_extra_item_add);
+                counter++;
+
+            })
+
+            $(".removeeventmore").click(function() {
+
+                $(".delete_whole_extra_item_add").remove();
+                counter--;
+            })
+
+        })
+    </script>
+    {{-- <script type="text/javascript">
         console.log('hello');
 
         $(document).ready(function() {
@@ -158,5 +181,5 @@
             })
 
         })
-    </script>
+    </script> --}}
 @endsection

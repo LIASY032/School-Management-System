@@ -1,6 +1,5 @@
 @extends('admin.admin_master')
 @section('admin')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="content-wrapper">
         <div class="container-full">
 
@@ -89,7 +88,7 @@
 
                                                     <div class="controls">
                                                         <img id="showImage"
-                                                            src="{{ !empty($editData->image) ? url('upload/user_images' . $editData->image) : asset('backend/images/user3-128x128.jpg') }}"
+                                                            src="{{ !empty($editData->image)? url('upload/user_images' . $editData->image): asset('backend/images/user3-128x128.jpg') }}"
                                                             style="width: 100px; border: 1px solid #000000" />
                                                     </div>
                                                 </div>
@@ -119,7 +118,7 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
-
+            console.log("================================")
 
             $('#image').change(function(e) {
 
