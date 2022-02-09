@@ -98,8 +98,8 @@
     </div>
     <div style="visibility: hidden;">
 
-        <div class="whole_extra_item_add" id='whole_extra_item_add'>
-            <div class="delete_whole_extra_item_add" id="delete_whole_extra_item_add">
+        <div class="whole_extra_item_add">
+            <div class="delete_whole_extra_item_add">
                 <div class="form-row">
                     <div class="col-md-5">
                         <div class="form-group">
@@ -139,47 +139,24 @@
 
     </div>
 
+
     <script type="text/javascript">
         $(document).ready(function() {
-
             console.log('hello');
             var counter = 0;
+            $(document).on('click', '.addeventmore', function() {
 
-            $(".addeventmore").click(function() {
-
-                var whole_extra_item_add = $('#whole_extra_item_add').html();
-
-                var add_item = $(".add_item");
-                add_item.append(whole_extra_item_add);
-                counter++;
-
-            })
-
-            $(".removeeventmore").click(function() {
-
-                $(".delete_whole_extra_item_add").remove();
-                counter--;
-            })
-
-        })
-    </script>
-    {{-- <script type="text/javascript">
-        console.log('hello');
-
-        $(document).ready(function() {
-
-            var counter = 0;
-            $(document).on('click', '.addeventmore', function(e) {
-                var whole_extra_item_add = $('#whole_extra_item_add').html();
+                var whole_extra_item_add = $('.whole_extra_item_add').html();
                 $(this).closest('.add_item').append(whole_extra_item_add);
                 counter++;
             });
 
-            $(document).on('click', '.removeeventmore', function(e) {
-                $(this).closest('.delete_whole_extra_item_add').remove();.
+            $(document).on('click', '.removeeventmore', function() {
+
+                $(this).closest(".delete_whole_extra_item_add").remove();
                 counter--;
-            })
+            });
 
         })
-    </script> --}}
+    </script>
 @endsection
