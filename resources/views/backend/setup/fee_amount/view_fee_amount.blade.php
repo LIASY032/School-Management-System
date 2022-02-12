@@ -37,14 +37,14 @@
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
 
-                                                    <td>{{ $amount->class_id }}</td>
+                                                    <td>{{ $amount['fee_category']['name'] }}</td>
 
                                                     <td>
 
-                                                        <a href="{{ route('fee.category.edit', $amount->id) }}"
+                                                        {{-- <a href="{{ route('fee.category.edit', $amount->id) }}"
                                                             class="btn btn-info">Edit</a>
                                                         <a href="{{ route('fee.category.delete', $amount->id) }}"
-                                                            class="btn btn-danger delete">Delete</a>
+                                                            class="btn btn-danger delete">Delete</a> --}}
                                                     </td>
 
                                                 </tr>
