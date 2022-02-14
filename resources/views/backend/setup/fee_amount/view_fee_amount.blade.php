@@ -41,10 +41,10 @@
 
                                                     <td>
 
-                                                        {{-- <a href="{{ route('fee.category.edit', $amount->id) }}"
+                                                        <a href="{{ route('fee.amount.edit', $amount->fee_category_id) }}"
                                                             class="btn btn-info">Edit</a>
-                                                        <a href="{{ route('fee.category.delete', $amount->id) }}"
-                                                            class="btn btn-danger delete">Delete</a> --}}
+                                                        <a href="{{ route('fee.amount.delete', $amount->fee_category_id) }}"
+                                                            class="btn btn-danger delete">Delete</a>
                                                     </td>
 
                                                 </tr>
@@ -70,6 +70,4 @@
         </div>
     </div>
     <!-- /.content-wrapper -->
-
-
 @endsection

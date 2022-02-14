@@ -124,4 +124,10 @@ Route::get('/fee/amount/view', [FeeAmountController::class, 'ViewFeeAmount'])->n
 
 Route::get('/fee/amount/add', [FeeAmountController::class, 'FeeAmountAdd'])->name('fee.amount.add');
 Route::post('/fee/amount/store', [FeeAmountController::class, 'FeeAmountStore'])->name('store.fee.amount');
+
+Route::get('/fee/amount/edit/{fee_category_id}', [FeeAmountController::class, 'FeeAmountEdit'])->name('fee.amount.edit');
+Route::get("/fee/amount/delete/{fee_category_id}", [FeeAmountController::class,
+'FeeAmountDelete'])->name('fee.amount.delete');
+
+
 });
