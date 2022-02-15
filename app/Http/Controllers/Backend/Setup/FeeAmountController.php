@@ -58,19 +58,40 @@ $data['fee_categories'] = FeeCategory::all();
 
       return view('backend.setup.fee_amount.edit_fee_amount',$data); 
       }
-      public function FeeCatUpdate(Request $request, $id){
-      $data = FeeCategory::find($id);
+      public function FeeAmountUpdate(Request $request, $fee_category_id){
+ 
+ 
+        if ($request->class_id == NULL){
+            $notification = array(
+      'message' => 'Sorry you do not select any class amount',
+      'alert-type' => 'error',
+      );
+      return redirect()->route('fee.amount.edit', $fee_category_id)->with($notification);
 
-      $validateData = $request->validate(['name' => 'required|unique:student_classes,name,'. $data->id]);
+     
+        } else{
 
-      $data->name = $request->name;
-      $data->save();
-      $notification = array(
-      'message' => 'Fee Category Updated successfully',
+        $countClass = count($request->class_id);
+
+        FeeAmount::where('fee_category_id', $fee_category_id)->delete();
+            for ($i = 0; $i < $countClass; $i++){
+
+                $fee_amount = new FeeAmount();
+                $fee_amount->fee_category_id = $request->fee_category_id;
+                $fee_amount->class_id = $request->class_id[$i];
+                $fee_amount->amount = $request->amount[$i];
+                $fee_amount->save();
+
+            }
+        
+         $notification = array(
+      'message' => 'Fee Amount Updated successfully',
       'alert-type' => 'success',
       );
-      return redirect()->route('fee.category.view')->with($notification);
+      return redirect()->route('fee.amount.view')->with($notification);
 
+
+        }
       }
       public function FeeCatDelete($id){
       $user = FeeCategory::find($id);
