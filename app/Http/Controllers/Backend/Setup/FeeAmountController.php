@@ -93,14 +93,24 @@ $data['fee_categories'] = FeeCategory::all();
 
         }
       }
-      public function FeeCatDelete($id){
-      $user = FeeCategory::find($id);
-      $user->delete();
-      $notification = array(
-      'message' => 'Fee  Category Deleted successfully',
-      'alert-type' => 'info',
-      );
-      return redirect()->route('fee.category.view')->with($notification);
+    //   public function FeeAmountDelete($fee_category_id){
+    //   $user = FeeCategory::find($id);
+    //   $user->delete();
+    //   $notification = array(
+    //   'message' => 'Fee  Category Deleted successfully',
+    //   'alert-type' => 'info',
+    //   );
+    //   return redirect()->route('fee.category.view')->with($notification);
+
+    //   }
+
+
+      public function FeeAmountDetails($fee_category_id){
+
+
+      $data['allData']= FeeAmount::where('fee_category_id', $fee_category_id)->orderBy('class_id', 'asc')->get();
+
+      return view('backend.setup.fee_amount.details_fee_amount',$data); 
 
       }
 

@@ -15,39 +15,44 @@
 
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Fee Amount List</h3>
-                                <a href="{{ route('fee.amount.add') }}" style="float: right; "
-                                    class="btn btn-round btn-success mb-5">Add Fee Amount </a>
+                                <h3 class="box-title">Fee Amount Details</h3>
+                                {{-- <a href="{{ route('fee.amount.add') }}" style="float: right; "
+                                    class="btn btn-round btn-success mb-5">Add Fee Amount </a> --}}
                             </div> <!-- /.box-header -->
                             <div class="box-body">
+
+                                <h4>
+
+                                    <strong>
+
+
+                                        Fee Category :
+                                    </strong>
+
+                                    {{ $allData[0]['fee_category']['name'] }}
+                                </h4>
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-striped">
-                                        <thead>
+                                        <thead class="thead-light">
                                             <tr>
                                                 <th width="5%">SL</th>
 
-                                                <th>Fee Category</th>
+                                                <th>Class Name</th>
 
-                                                <th width="25%">Action</th>
+                                                <th width="25%">Amount</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($allData as $key => $amount)
+                                            @foreach ($allData as $key => $detail)
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
 
-                                                    <td>{{ $amount['fee_category']['name'] }}</td>
+                                                    <td>{{ $detail['student_class']['name'] }}</td>
 
                                                     <td>
 
-                                                        <a href="{{ route('fee.amount.edit', $amount->fee_category_id) }}"
-                                                            class="btn btn-info">Edit</a>
-                                                        <a href="{{ route('fee.amount.details', $amount->fee_category_id) }}"
-                                                            class="btn btn-primary">Details</a>
-
-                                                        {{-- <a href="{{ route('fee.amount.delete', $amount->fee_category_id) }}"
-                                                            class="btn btn-danger delete">Delete</a> --}}
+                                                        {{ $detail->amount }}
                                                     </td>
 
                                                 </tr>

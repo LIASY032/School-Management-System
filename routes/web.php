@@ -131,4 +131,5 @@ Route::get("/fee/amount/delete/{fee_category_id}", [FeeAmountController::class,
 
 Route::post('/fee/amount/update/{fee_category_id}', [FeeAmountController::class, 'FeeAmountUpdate'])->name('update.fee.amount');
 
+Route::get('/fee/amount/details/{fee_category_id}', [FeeAmountController::class, 'FeeAmountDetails'])->name('fee.amount.details');
 });
