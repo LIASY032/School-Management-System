@@ -38,7 +38,7 @@ class FeeCategoryController extends Controller
       public function FeeCatUpdate(Request $request, $id){
       $data = FeeCategory::find($id);
 
-      $validateData = $request->validate(['name' => 'required|unique:student_classes,name,'. $data->id]);
+      $validateData = $request->validate(['name' => 'required|unique:fee_categories,name,'. $data->id]);
 
       $data->name = $request->name;
       $data->save();

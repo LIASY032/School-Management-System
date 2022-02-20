@@ -81,6 +81,9 @@
 
                       <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Fee Amount</a>
                       </li>
+                      <li><a href="{{ route('exam.type.view') }}"><i class="ti-more"></i>Exam Type</a>
+                      </li>
+
 
                   </ul>
               </li>
