@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
+use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
 
 
 
@@ -146,6 +147,22 @@ Route::post('/exam/type/update/{id}', [ExamTypeController::class,
 'ExamTypeUpdate'])->name('update.exam.type');
 Route::get("/exam/type/delete/{id}", [ExamTypeController::class,
 'ExamTypeDelete'])->name('exam.type.delete');
+
+// School Subject 
+Route::get('/school/subject/view', [SchoolSubjectController::class, 'ViewSchoolSubject'])->name('school.subject.view');
+Route::get('/school/subject/add', [SchoolSubjectController::class, 'SchoolSubjectAdd'])->name('school.subject.add');
+Route::post('/school/subject/store', [SchoolSubjectController::class, 'SchoolSubjectStore'])->name('store.school.subject');
+Route::get('/school/subject/edit/{id}', [SchoolSubjectController::class,
+'SchoolSubjectEdit'])->name('school.subject.edit');
+Route::post('/school/subject/update/{id}', [SchoolSubjectController::class,
+'SchoolSubjectUpdate'])->name('update.school.subject');
+Route::get("/school/subject/delete/{id}", [SchoolSubjectController::class,
+'SchoolSubjectDelete'])->name('school.subject.delete');
+
+
+
+
+
 
 
 
