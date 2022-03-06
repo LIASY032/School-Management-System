@@ -86,6 +86,9 @@
                       <li><a href="{{ route('school.subject.view') }}"><i class="ti-more"></i>School
                               Subject</a>
                       </li>
+                      <li><a href="{{ route('assign.subject.view') }}"><i class="ti-more"></i>Assign
+                              Subject</a>
+                      </li>
 
                   </ul>
               </li>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
+use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 
 
 
@@ -158,6 +159,19 @@ Route::post('/school/subject/update/{id}', [SchoolSubjectController::class,
 'SchoolSubjectUpdate'])->name('update.school.subject');
 Route::get("/school/subject/delete/{id}", [SchoolSubjectController::class,
 'SchoolSubjectDelete'])->name('school.subject.delete');
+
+
+// Assign Subject 
+Route::get('/assign/subject/view', [AssignSubjectController::class, 'ViewAssignSubject'])->name('assign.subject.view');
+Route::get('/assign/subject/add', [AssignSubjectController::class, 'AssignSubjectAdd'])->name('assign.subject.add');
+Route::post('/assign/subject/store', [AssignSubjectController::class, 'AssignSubjectStore'])->name('store.assign.subject');
+Route::get('/assign/subject/edit/{id}', [AssignSubjectController::class,
+'AssignSubjectEdit'])->name('assign.subject.edit');
+Route::post('/assign/subject/update/{id}', [AssignSubjectController::class,
+'AssignSubjectUpdate'])->name('update.assign.subject');
+Route::get("/assign/subject/delete/{id}", [AssignSubjectController::class,
+'AssignSubjectDelete'])->name('assign.subject.delete');
+
 
 
 
