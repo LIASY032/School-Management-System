@@ -13,17 +13,18 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col">
-                            <form method="POST" action="{{ route('store.assign.subject') }}">
+                            <form method="POST" action="{{ route('store.fee.amount') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="add_item">
 
                                             <div class="form-group">
-                                                <h5>Student Class <span class="text-danger">*</span></h5>
+                                                <h5>Class Name<span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <select name="class_id[]" required class="form-control">
+                                                    <select name="class_id" required class="form-control">
                                                         <option value="" selected="" disabled="">Select Class
+
                                                         </option>
                                                         @foreach ($classes as $class)
                                                             <option value="{{ $class->id }}">
@@ -36,12 +37,14 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-5">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <h5>Student Subject<span class="text-danger">*</span></h5>
                                                         <div class="controls">
-                                                            <select name="class_id[]" required class="form-control">
-                                                                <option value="" selected="" disabled="">Select Class
+                                                            <select name="subject_id[]" required class="form-control">
+                                                                <option value="" selected="" disabled="">
+                                                                    Select Subject
+
                                                                 </option>
                                                                 @foreach ($subjects as $subject)
                                                                     <option value="{{ $subject->id }}">
@@ -53,11 +56,31 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-5">
+
+                                                <div class="col-md-2">
                                                     <div class="form-group">
-                                                        <h5>Amount<span class="text-danger">*</span></h5>
+                                                        <h5>Full Mark<span class="text-danger">*</span></h5>
                                                         <div class="controls">
-                                                            <input type="text" name="amount[]" class="form-control" />
+                                                            <input type="text" name="full_mark[]" class="form-control" />
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <h5>Pass Mark<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <input type="text" name="pass_mark[]" class="form-control" />
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <h5>Subjective Mark<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <input type="text" name="subjective_mark[]"
+                                                                class="form-control" />
                                                         </div>
 
                                                     </div>
@@ -100,17 +123,20 @@
 
         <div class="whole_extra_item_add">
             <div class="delete_whole_extra_item_add">
-                <div class="form-row">
-                    <div class="col-md-5">
+
+                <div class="row">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <h5>Student Class <span class="text-danger">*</span></h5>
+                            <h5>Student Subject<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <select name="class_id[]" required class="form-control">
-                                    <option value="" selected="" disabled="">Select Class
+                                <select name="subject_id[]" required class="form-control">
+                                    <option value="" selected="" disabled="">
+                                        Select Subject
+
                                     </option>
-                                    @foreach ($classes as $class)
-                                        <option value="{{ $class->id }}">
-                                            {{ $class->name }}
+                                    @foreach ($subjects as $subject)
+                                        <option value="{{ $subject->id }}">
+                                            {{ $subject->name }}
                                         </option>
                                     @endforeach
 
@@ -118,11 +144,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
+
+                    <div class="col-md-2">
                         <div class="form-group">
-                            <h5>Amount<span class="text-danger">*</span></h5>
+                            <h5>Full Mark<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input type="text" name="amount[]" class="form-control" />
+                                <input type="text" name="full_mark[]" class="form-control" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <h5>Pass Mark<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input type="text" name="pass_mark[]" class="form-control" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <h5>Subjective Mark<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input type="text" name="subjective_mark[]" class="form-control" />
                             </div>
 
                         </div>
@@ -134,6 +179,11 @@
                             <i class="fa fa-minus-circle"></i> </span>
                     </div>
                 </div>
+
+
+
+
+
             </div>
         </div>
 

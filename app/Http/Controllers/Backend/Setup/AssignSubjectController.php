@@ -25,6 +25,7 @@ class AssignSubjectController extends Controller
 
     return view('backend.setup.assign_subject.add_assign_subject', $data);
     }
+
     public function AssignSubjectStore(Request $request){
 
     $validateData = $request->validate(['name' => 'required|unique:assign_subjects,name']);

@@ -23,7 +23,8 @@
                                                 <h5>Fee Category<span class="text-danger">*</span></h5>
                                                 <div class="controls">
                                                     <select name="fee_category_id" required class="form-control">
-                                                        <option value="" selected="" disabled="">Select Fee Category
+                                                        <option value="" selected="" disabled="">Select Fee
+                                                            Category
                                                         </option>
                                                         @foreach ($fee_categories as $category)
                                                             <option value="{{ $category->id }}">
@@ -41,7 +42,8 @@
                                                         <h5>Student Class <span class="text-danger">*</span></h5>
                                                         <div class="controls">
                                                             <select name="class_id[]" required class="form-control">
-                                                                <option value="" selected="" disabled="">Select Class
+                                                                <option value="" selected="" disabled="">Select
+                                                                    Class
                                                                 </option>
                                                                 @foreach ($classes as $class)
                                                                     <option value="{{ $class->id }}">
@@ -100,7 +102,7 @@
 
         <div class="whole_extra_item_add">
             <div class="delete_whole_extra_item_add">
-                <div class="form-row">
+                <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
                             <h5>Student Class <span class="text-danger">*</span></h5>
